@@ -1,0 +1,63 @@
+@import "_mixins/grid.less";
+@import "_mixins/form.less";
+@import "_mixins/table.less";
+
+@import "_modules/checkbox.less";
+@import "_modules/info.less";
+@import "_modules/modal.less";
+@import "_modules/progressbar.less";
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+
+nav {
+  width: 150px;
+  border-right: 1px solid #ccc;
+  background: #fff;
+  ul {
+    list-style: none;
+    margin: 1rem 0;
+    padding: 0;
+    li {
+      font-size: 14px;
+      &.active {
+        background: rgba(0, 0, 0, 0.05);
+      }
+      a {
+        color: #333;
+        text-decoration: none;
+        display: block;
+        padding: 0.25rem .5rem;
+        outline: 0 none;
+        span.badge {
+          background: rgba(0, 0, 0, 0.1);
+          padding: 0 7px;
+          border-radius: 50px;
+        }
+      }
+    }
+  }
+}
+
+main {
+  padding: 10px;
+}
