@@ -41,5 +41,8 @@
     "vue-template-compiler": "^2.0.0",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.2.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
   }
 }

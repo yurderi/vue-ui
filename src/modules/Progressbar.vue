@@ -23,7 +23,7 @@ export default {
     ],
     computed: {
         percent() {
-            return this.value / Math.max(1, this.max) * 100;
+            return this.value / Math.max(1, this.max || 100) * 100;
         }
     }
 }
