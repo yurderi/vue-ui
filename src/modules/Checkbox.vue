@@ -1,11 +1,11 @@
 <template>
-    <div class="checkbox flex">
-        <label :for="name" v-if="label">{{ label }}</label>
-        
-        <div class="container" @click="update(!value)" :class="{ active: value }">
-            <span v-if="value">{{opts.trueLabel}}</span>
-            <span v-else>{{opts.falseLabel}}</span>
+    <div class="checkbox flex" @click="update(!value)">
+        <div class="container" :class="{ active: value }">
+            <fa :icon="['far', 'check-square']" v-if="value"></fa>
+            <fa :icon="['far', 'square']" v-else></fa>
         </div>
+        
+        <label :for="name" v-if="label" v-html="label"></label>
     </div>
 </template>
 
@@ -15,19 +15,8 @@ export default {
     props: [
         'name',
         'label',
-        'value',
-        'settings'
+        'value'
     ],
-    mounted()
-    {
-        this.opts = Object.assign({}, this.opts, this.settings)
-    },
-    data: () => ({
-        opts: {
-            trueLabel: 'On',
-            falseLabel: 'Off'
-        }
-    }),
     methods: {
         update(value) {
             this.$emit('input', value)

@@ -1,4 +1,4 @@
-.modal-mask {
+.modal-container {
   .center;
   position: fixed;
   z-index: 9998;
@@ -10,28 +10,15 @@
   transition: opacity .3s ease;
 }
 
-.modal-container {
+.modal {
   background-color: #fff;
   border-radius: 2px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
   font-family: Helvetica, Arial, sans-serif;
-}
-
-.modal-body {
-  padding: 10px 20px;
-}
-
-.modal-header {
-  font-size: 16px;
-}
-
-.modal-content {
-  margin: 10px 0 0 0;
-}
-
-.modal-footer {
-  margin: 10px 0 0 0;
+  .body {
+    padding: 15px;
+  }
 }
 
 /*

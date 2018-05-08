@@ -1,7 +1,7 @@
 <template>
     <transition name="modal">
-        <div class="modal-mask">
-            <div class="modal-container">
+        <div class="modal-container">
+            <div class="modal">
                 <slot></slot>
             </div>
         </div>
