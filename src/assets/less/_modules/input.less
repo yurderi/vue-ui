@@ -17,7 +17,54 @@ input[type=email] {
 }
 
 .form-input {
+  position: relative;
   input {
     width: 100%;
+    padding-right: 25px;
+  }
+  &.is--ok {
+    border-color: #2ecc71 !important;
+  }
+  &.is--error {
+    border-color: #e74c3c !important;
+  }
+  div.validation-icon {
+    position: absolute;
+    top: 6px;
+    right: 9px;
+    svg.ok {
+      color: #2ecc71;
+    }
+    svg.fail {
+      color: #e74c3c;
+    }
+  }
+  div.validation-message {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 5px 2px 0 0;
+    position: relative;
+    &:before {
+      position: absolute;
+      display: block;
+      content: '';
+      top: -4px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      -webkit-transform:rotate(360deg);
+      border-style: solid;
+      border-width: 0 4px 4px 4px;
+      border-color: transparent transparent rgba(0, 0, 0, 0.7) transparent;
+    }
+    span {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 3px;
+      padding: 3px 6px;
+      display: inline-block;
+      font-size: 12px;
+      color: #fff;
+    }
   }
 }

@@ -35,15 +35,34 @@
       margin: 15px 0 0 0;
       .example-code {
         margin: 0 0 15px 0;
-        div.code {
-          font-family: 'Consolas', monospace;
-          font-size: 12px;
-          padding: 10px;
-          background: #eee;
-          border-radius: 3px;
-          box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.25);
-          white-space: pre;
-          overflow-x: auto;
+        div.code-container {
+          position: relative;
+          &:hover .language {
+            opacity: 0;
+          }
+          div.code {
+            font-family: 'Consolas', monospace;
+            font-size: 12px;
+            padding: 10px;
+            background: #eee;
+            border-radius: 3px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.25);
+            white-space: pre;
+            overflow-x: auto;
+          }
+          .language {
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 3px 5px;
+            background: rgba(0, 0, 0, 0.25);
+            display: inline-block;
+            border-radius: 3px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            pointer-events: none;
+            transition: opacity 0.1s;
+          }
         }
       }
       .example-content {

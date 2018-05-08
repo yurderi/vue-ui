@@ -1,12 +1,18 @@
 <template>
-    <div class="code">{{ formattedCode }}</div>
+    <div class="code-container">
+        <div class="code">{{ formattedCode }}</div>
+        <div class="language" v-if="language">
+            {{ language }}
+        </div>
+    </div>
 </template>
 
 <script>
 export default {
     name: 'v-code',
     props: [
-        'code'
+        'code',
+        'language'
     ],
     computed: {
         formattedCode() {
