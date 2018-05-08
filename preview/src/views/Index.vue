@@ -126,6 +126,11 @@
                         <td>The type of the input. Can be text, password, email etc.</td>
                         <td>yes</td>
                     </tr>
+                    <tr>
+                        <td>@validate</td>
+                        <td>A callback for optional validation</td>
+                        <td>no</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
