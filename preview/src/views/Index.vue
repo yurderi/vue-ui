@@ -98,7 +98,69 @@
             </div>
         </div>
         
-        <!-- Component: button -->
+        <!-- Component: v-input -->
+        <div class="component">
+            <div class="component-name">
+                input
+            </div>
+            <div class="component-description">
+                A configurable input with some features.
+            </div>
+            <div class="component-properties">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Required</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>value</td>
+                        <td>The value of the input.</td>
+                        <td>yes</td>
+                    </tr>
+                    <tr>
+                        <td>type</td>
+                        <td>The type of the input. Can be text, password, email etc.</td>
+                        <td>yes</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="component-examples">
+                <div class="examples-container-header">
+                    Examples
+                </div>
+                <div class="component-example">
+                    <div class="example-code">
+                        <v-code code='
+<v-input type="text" placeholder="A simple input"></v-input>
+                        '></v-code>
+                    </div>
+                    <div class="example-content">
+                        <v-input type="text" placeholder="A simple input"></v-input>
+                    </div>
+                </div>
+                <div class="component-example">
+                    <div class="example-code">
+                        <v-code code='
+<div class="row">
+    <v-input type="text" placeholder="A simple input with an info-box" class="flex"></v-input>
+    <v-info>I am a info box</v-info>
+</div>
+                        '></v-code>
+                    </div>
+                    <div class="example-content row">
+                        <v-input type="text" placeholder="A simple input with an info-box" class="flex"></v-input>
+                        <v-info>I am a info box</v-info>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Component: v-button -->
         <div class="component">
             <div class="component-name">
                 button

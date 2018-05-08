@@ -8,6 +8,7 @@ const loadModules = (Vue) => {
     Vue.component('v-progress', require('./modules/Progressbar.vue').default)
     Vue.component('fa', require('@fortawesome/vue-fontawesome').default)
     Vue.component('v-button', require('./modules/Button.vue').default)
+    Vue.component('v-input', require('./modules/Input.vue').default)
     
     require('@fortawesome/fontawesome-free-brands')
     require('@fortawesome/fontawesome-free-solid')

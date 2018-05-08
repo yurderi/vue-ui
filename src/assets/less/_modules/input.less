@@ -1,0 +1,23 @@
+input[type=text],
+input[type=password],
+input[type=email] {
+  border: 1px solid #ccc;
+  padding: 5px;
+  color: #333;
+  margin: 0;
+  outline: 0 none;
+  border-radius: 3px;
+  box-shadow: inset -1px 1px 1px rgba(0, 0, 0, 0.1);
+  &:focus {
+    border-color: rgba(52, 152, 219, 0.75);
+  }
+  &:disabled {
+    background: rgba(0, 0, 0, 0.025);
+  }
+}
+
+.form-input {
+  input {
+    width: 100%;
+  }
+}
