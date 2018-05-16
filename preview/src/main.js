@@ -9,8 +9,11 @@ Vue.config.productionTip = false
 import RhinosUI from '../../src/index'
 import '../../src/assets/less/all.less'
 import './assets/component.less'
+import './assets/hljs.less'
+import VueHighlightJS from 'vue-highlightjs'
 
 Vue.use(RhinosUI)
+Vue.use(VueHighlightJS)
 
 import VCode from '@/components/Code'
 Vue.component('v-code', VCode)

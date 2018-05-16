@@ -142,7 +142,7 @@
                     <div class="example-code">
                         <v-code code='
 <v-input type="text" placeholder="A simple input"></v-input>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-input type="text" placeholder="A simple input"></v-input>
@@ -155,7 +155,7 @@
     <v-input type="text" placeholder="A simple input with an info-box" class="flex"></v-input>
     <v-info>I am a info box</v-info>
 </div>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content row">
                         <v-input type="text" placeholder="A simple input with an info-box" class="flex"></v-input>
@@ -238,7 +238,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                         <v-code code='
 <v-button>Just a simple button which does nothing</v-button>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-button>Just a simple button which does nothing</v-button>
@@ -248,7 +248,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                         <v-code code='
 <v-button disabled>A disabled button</v-button>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-button disabled>A disabled button</v-button>
@@ -258,7 +258,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                         <v-code code='
 <v-button spin>A loading button</v-button>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-button spin>A loading button</v-button>
@@ -268,7 +268,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                         <v-code code='
 <v-button spin progress="50">A loading button with progress</v-button>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-button spin progress="50">A loading button with progress</v-button>
@@ -278,7 +278,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                         <v-code code='
 <v-button progress="50">A simple button with progress</v-button>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-button progress="50">A simple button with progress</v-button>
@@ -331,7 +331,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                        <v-code code='
 <v-progress value="50"></v-progress>
-                       '></v-code>
+                       ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-progress value="50"></v-progress>
@@ -341,7 +341,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                        <v-code code='
 <v-progress value="50" text="50%"></v-progress>
-                       '></v-code>
+                       ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-progress value="50" text="50%"></v-progress>
@@ -366,7 +366,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                        <v-code code='
 <v-info>Some Information to show.</v-info>
-                       '></v-code>
+                       ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-info>Some Information to show.</v-info>
@@ -421,7 +421,7 @@ validateInput({ ok, fail, clear, spin }) {
 <v-checkbox name="example_checkbox"
             label="Use this framework."
             v-model="checkbox.value"></v-checkbox>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-checkbox name="example_checkbox"
@@ -438,7 +438,9 @@ validateInput({ ok, fail, clear, spin }) {
                 file input
             </div>
             <div class="component-description">
-                an extended file input
+                an extended file input.
+                /
+                note: this input will probably doesn't work as expected in non-electron windows.
             </div>
             <div class="component-properties">
                 <table>
@@ -476,7 +478,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                         <v-code code='
 <v-file id="myFile" v-model="file.first"></v-file>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-file id="myFile" v-model="file.first"></v-file>
@@ -486,7 +488,7 @@ validateInput({ ok, fail, clear, spin }) {
                     <div class="example-code">
                         <v-code code='
 <v-file id="mySecondFile" v-model="file.second" type="directory"></v-file>
-                        '></v-code>
+                        ' language="html"></v-code>
                     </div>
                     <div class="example-content">
                         <v-file id="mySecondFile" v-model="file.second" type="directory"></v-file>
@@ -535,7 +537,7 @@ validateInput({ ok, fail, clear, spin }) {
         </button>
     </div>
 </v-modal>
-                    '></v-code>
+                    ' language="html"></v-code>
                 </div>
                 <div class="example-content">
                     <button @click="modal.opened = true">
