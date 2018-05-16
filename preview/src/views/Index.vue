@@ -166,8 +166,8 @@
                     <div class="example-code">
                         <v-code code='
 <div class="row">
-    <v-input type="text" placeholder="A simple input with an info-box" class="flex"></v-input>
-    <v-info>I am a info box</v-info>
+    <v-input type="text" placeholder="A simple input with validation" v-model="input.value"
+             @validate="validateInput"></v-input>
 </div>
                         ' language="html"></v-code>
                     </div>
@@ -503,19 +503,7 @@ validateInput({ ok, fail, clear, spin }) {
                 modal
             </div>
             <div class="component-description">
-                a configurable modal
-            </div>
-            <div class="component-properties">
-                <table>
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Description</th>
-                        <th>Required</th>
-                    </tr>
-                    </thead>
-                    <tbody></tbody>
-                </table>
+                a simple modal
             </div>
             <div class="component-examples">
                 <div class="examples-container-header">
