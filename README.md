@@ -9,9 +9,11 @@ npm i --save rhinos-vue
 
 ```javascript
 const Vue     = require('vue')
-const VRhinos = require('rhinos-vue')
+const RhinosUI = require('rhinos-vue')
 
-Vue.use(VRhinos)
+require('rhinos-vue/assets/less/all.less')
+
+Vue.use(RhinosUI)
 
 // ... further code
 ```
