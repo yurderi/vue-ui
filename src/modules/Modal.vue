@@ -7,3 +7,10 @@
         </div>
     </transition>
 </template>
+
+<script>
+export default {
+    name: 'v-modal',
+    description: 'A simple configurable modal.'
+}
+</script>

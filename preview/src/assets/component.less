@@ -4,6 +4,28 @@
     width: 64px;
   }
 }
+.menu {
+  ul {
+    list-style: none;
+    margin: 15px 0 0 0;
+    padding: 0;
+    li {
+      padding: 5px;
+      color: #3498db;
+      width: 200px;
+      &:hover {
+        cursor: pointer;
+      }
+      &.is--active {
+        font-weight: bold;
+      }
+    }
+  }
+}
+.component-container {
+  margin: 0 0 15px 0;
+  overflow-y: auto;
+}
 .component {
   border: 1px solid #ccc;
   border-radius: 3px;

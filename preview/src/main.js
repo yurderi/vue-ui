@@ -16,7 +16,9 @@ Vue.use(RhinosUI)
 Vue.use(VueHighlightJS)
 
 import VCode from '@/components/Code'
+import VComponent from '@/components/Component'
 Vue.component('v-code', VCode)
+Vue.component('v-component', VComponent)
 
 /* eslint-disable no-new */
 new Vue({

@@ -12,11 +12,24 @@
 <script>
 export default {
     name: 'checkbox',
-    props: [
-        'name',
-        'label',
-        'value'
-    ],
+    description: 'A simple user-styled checkbox.',
+    props: {
+        name: {
+            type: String,
+            description: 'The name of the input',
+            required: false
+        },
+        label: {
+            type: String,
+            description: 'The label for the checkbox',
+            required: true
+        },
+        value: {
+            type: Boolean,
+            description: 'The assigned value for the checkbox.',
+            required: true
+        }
+    },
     methods: {
         update(value) {
             this.$emit('input', value)

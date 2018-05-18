@@ -11,20 +11,35 @@
 <script>
 export default {
     name: 'v-file-input',
-    props: [
-        'id',
-        'value',
-        'type',
-        'disabled',
-    ],
+    description: 'An extended custom-style file input',
+    props: {
+        id: {
+            type: String,
+            description: 'The id of the input for associated labels',
+            required: false
+        },
+        type: {
+            type: String,
+            description: 'The type of the input. Can be "directory" or "file (default)"',
+            required: false
+        },
+        value: {
+            type: String,
+            description: 'The associated field value',
+            required: true
+        },
+        disabled: {
+            type: Boolean,
+            description: 'Whether the input is disabled or not',
+            required: false
+        }
+    },
     methods: {
         onPathSelected(e) {
             let me = this
             let path = e.target.files.length === 1
-                ? e.target.files[0].name
+                ? e.target.files[0].path
                 : ''
-    
-            console.log(e.target.files[ 0 ])
     
             me.$emit('input', path)
         },

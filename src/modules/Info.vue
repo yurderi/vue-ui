@@ -8,3 +8,10 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'v-info',
+    description: 'A button which shows text on hover.',
+}
+</script>
