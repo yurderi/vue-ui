@@ -4,11 +4,16 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: require('@/views/Index').default
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'index',
+            component: require('@/views/Index').default
+        },
+        {
+            path: '/:id',
+            name: 'components',
+            component: require('@/views/Index').default
+        }
+    ]
 })

@@ -36,7 +36,7 @@ export default {
             { name: 'v-info', component: 'info-component' },
             { name: 'v-input', component: 'input-component' },
             { name: 'v-modal', component: 'modal-component' },
-            { name: 'v-progressbar', component: 'progress-bar-component' },
+            { name: 'v-progress', component: 'progress-bar-component' },
         ],
         selectedComponent: 'fa-component'
     }),
@@ -50,11 +50,30 @@ export default {
         ModalComponent,
         ProgressBarComponent
     },
+    mounted() {
+        let me = this
+        let id = me.$route.params.id
+        
+        if (!id) {
+            id = me.menu[0].name
+            me.$router.push({ name: 'components', params: { id } })
+            return
+        }
+    
+        let item = me.menu.find(i => i.name === id)
+        if (item) {
+            me.selectedComponent = item.component
+        } else {
+            id = me.menu[0].name
+            me.$router.push({ name: 'components', params: { id } })
+        }
+    },
     methods: {
         use (item) {
             let me = this
             
             me.selectedComponent = item.component
+            me.$router.push({ name: 'components', params: { id: item.name } })
         }
     }
 }
