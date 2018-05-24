@@ -18,7 +18,7 @@ export default {
         disabled: Boolean,
         spin: Boolean,
         progress: {
-            type: String,
+            type: Number|String,
             description: 'Progress in percent',
             required: false
         }
