@@ -24,6 +24,7 @@ import InfoComponent from '@/views/components/Info'
 import InputComponent from '@/views/components/Input'
 import ModalComponent from '@/views/components/Modal'
 import ProgressBarComponent from '@/views/components/ProgressBar'
+import SelectComponent from '@/views/components/Select'
 
 export default {
     name: 'index',
@@ -37,6 +38,7 @@ export default {
             { name: 'v-input', component: 'input-component' },
             { name: 'v-modal', component: 'modal-component' },
             { name: 'v-progress', component: 'progress-bar-component' },
+            { name: 'v-select', component: 'select-component' }
         ],
         selectedComponent: 'fa-component'
     }),
@@ -48,7 +50,8 @@ export default {
         InfoComponent,
         InputComponent,
         ModalComponent,
-        ProgressBarComponent
+        ProgressBarComponent,
+        SelectComponent
     },
     mounted() {
         let me = this

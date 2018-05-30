@@ -9,6 +9,7 @@ const loadModules = (Vue) => {
     Vue.component('fa', require('@fortawesome/vue-fontawesome').default)
     Vue.component('v-button', require('./modules/Button.vue').default)
     Vue.component('v-input', require('./modules/Input.vue').default)
+    Vue.component('v-select', require('./modules/Select.vue').default)
     
     require('@fortawesome/fontawesome-free-brands')
     require('@fortawesome/fontawesome-free-solid')

@@ -99,6 +99,11 @@ export default {
         
             me.$emit('input', value)
         },
+        focus() {
+            let me = this
+            
+            me.$refs.input.focus()
+        },
         validate() {
             let me = this
         
