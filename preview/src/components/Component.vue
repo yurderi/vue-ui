@@ -47,6 +47,7 @@
 import Vue from 'vue'
 
 export default {
+    comments: true,
     name: 'v-component',
     props: [
         'name',

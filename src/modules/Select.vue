@@ -1,9 +1,20 @@
 <template>
     <div class="select" :class="{ focus: isFocus }" @click="focus()">
-        <div class="selected-value">
+        <div class="selected-value row">
             <template v-if="selectedItem">
-                {{ selectedItem[displayField] }}
+                <span class="flex">
+                    <slot name="selected-value" :selectedItem="selectedItem" :displayField="displayField">
+                        {{ selectedItem[displayField] }}
+                    </slot>
+                </span>
             </template>
+            <span v-else class="nothing-selected flex">
+                <slot name="nothing-selected">(nothing selected)</slot>
+            </span>
+            <div class="arrow">
+                <fa icon="angle-down" v-if="!isFocus"></fa>
+                <fa icon="angle-up" v-else></fa>
+            </div>
         </div>
         <div class="dropdown">
             <v-input class="filter" v-model="filter" type="text" placeholder="Search..." ref="input"></v-input>
@@ -11,7 +22,9 @@
                 <li v-for="item in items"
                     :class="{ active: item[valueField] === value }"
                     @click="select(item)" ref="items">
-                    {{ item[displayField] }}
+                    <slot name="item" :item="item" :displayField="displayField">
+                        {{ item[displayField] }}
+                    </slot>
                 </li>
             </ul>
             <span v-else class="nothing-found">
@@ -28,7 +41,8 @@ export default {
         data: {
             type: Array,
             required: true,
-            description: 'The data which should be shown.'
+            description: 'The data which should be shown.',
+            default: []
         },
         displayField: {
             type: String,

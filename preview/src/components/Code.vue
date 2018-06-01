@@ -16,7 +16,6 @@
 export default {
     name: 'v-code',
     props: [
-        'code',
         'language'
     ],
     computed: {
@@ -26,6 +25,14 @@ export default {
         lineNumbers() {
             return this.formattedCode.split('\n').length
         }
+    },
+    data: () => ({
+        code: ''
+    }),
+    mounted() {
+        let me = this
+    
+        me.code = me.$slots.default[ 1 ].text
     }
 }
 </script>
