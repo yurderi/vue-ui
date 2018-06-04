@@ -6,20 +6,8 @@
         <div class="component-description">
             {{ description }}
         </div>
-        <div class="tab-menu" v-if="tab">
-            <ul>
-                <li :class="{ active: tab === 'properties' }" @click="tab = 'properties'" v-if="options.props">
-                    <fa icon="list"></fa>
-                    <span>Properties</span>
-                </li>
-                <li :class="{ active: tab === 'examples' }" @click="tab = 'examples'" v-if="hasExamples">
-                    <fa icon="file-code"></fa>
-                    <span>Examples</span>
-                </li>
-            </ul>
-        </div>
-        <div class="tab-content" v-if="tab">
-            <div class="tab-item" :class="{ active: tab === 'properties' }">
+        <v-tab-menu ref="tabMenu">
+            <v-tab id="properties" label="Properties" icon="list" v-if="options.props">
                 <div class="component-properties" v-if="options.props">
                     <table>
                         <thead>
@@ -46,13 +34,13 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="tab-item" :class="{ active: tab === 'examples' }">
-                 <div class="component-examples" v-if="hasExamples">
+            </v-tab>
+            <v-tab id="examples" label="Examples" icon="file-code">
+                <div class="component-examples" v-if="hasExamples">
                     <slot></slot>
                 </div>
-            </div>
-        </div>
+            </v-tab>
+        </v-tab-menu>
     </div>
 </template>
 
@@ -70,8 +58,7 @@ export default {
         options: {
             description: '',
             props: {}
-        },
-        tab: null
+        }
     }),
     mounted() {
         let me = this
@@ -80,11 +67,9 @@ export default {
         me.options = component.extendOptions
     
         if (me.hasExamples) {
-            me.tab = 'examples'
+            me.$refs.tabMenu.select('examples')
         } else if (me.options.props) {
-            me.tab = 'properties'
-        } else {
-            me.tab = null
+            me.$refs.tabMenu.select('properties')
         }
     },
     computed: {

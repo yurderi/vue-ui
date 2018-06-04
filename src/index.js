@@ -12,6 +12,11 @@ const loadModules = (Vue) => {
     Vue.component('v-select', require('./modules/Select.vue').default)
     Vue.component('v-validation', require('./modules/Validation.vue').default)
     
+    // Tab menu
+    Vue.component('v-tab-menu', require('./modules/TabMenu.vue').default)
+    Vue.component('v-tab', require('./modules/Tab.vue').default)
+    
+    
     require('@fortawesome/fontawesome-free-brands')
     require('@fortawesome/fontawesome-free-solid')
     require('@fortawesome/fontawesome-free-regular')
