@@ -208,6 +208,10 @@ export default {
         create () {
             let me = this
             
+            if (me.isCreating === true) {
+                return
+            }
+            
             me.$emit('create', me.filter, {
                 spin() {
                     me.isCreating = true
