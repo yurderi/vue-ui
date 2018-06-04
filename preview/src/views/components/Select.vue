@@ -44,7 +44,7 @@
             </div>
         </div>
         <div class="example-content">
-            <v-select :data="languages" v-model="selectedLanguage" displayField="language">
+            <v-select :data="languages" v-model="selectedLanguage" displayField="language" @create="create">
                 <template slot="nothing-selected">Please select</template>
                 <template slot="selected-value" slot-scope="value">
                     {{ value.selectedItem[value.displayField] }}
@@ -82,10 +82,21 @@ export default {
             { id: 11, language: 'India', translations: true },
         ]
     }),
-    mounted() {
-        let me = this
-        
-        window.v = me
-    },
+    methods: {
+        create (value, { spin, done }) {
+            let me = this
+            let item = {
+                id: Math.random(),
+                language: value,
+                translations: false
+            }
+            
+            spin()
+            setTimeout(() => {
+                me.languages.push(item)
+                done(item)
+            }, 500)
+        }
+    }
 }
 </script>

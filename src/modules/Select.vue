@@ -17,7 +17,9 @@
             </div>
         </div>
         <div class="dropdown">
-            <v-input class="filter" v-model="filter" type="text" placeholder="Search..." ref="input"></v-input>
+            <v-input class="filter" v-model="filter" type="text" placeholder="Search..." ref="input" :disabled="isCreating"></v-input>
+            <fa icon="spinner" spin class="is--creating" v-if="isCreating"></fa>
+            
             <ul class="values" v-if="items.length > 0" ref="list">
                 <li v-for="item in items"
                     :class="{ active: item[valueField] === value }"
@@ -29,6 +31,9 @@
             </ul>
             <span v-else class="nothing-found">
                 Nothing found for <span class="filter-term">"{{ filter }}"</span>
+                <span class="create-item">
+                    (Press "enter" to create a new item)
+                </span>
             </span>
         </div>
     </div>
@@ -37,6 +42,7 @@
 <script>
 export default {
     name: 'v-select',
+    description: 'A custom styled select field with search input.',
     props: {
         data: {
             type: Array,
@@ -83,7 +89,8 @@ export default {
         filter: '',
         isFocus: false,
         preventUnfocus: false,
-        preventFocus: false
+        preventFocus: false,
+        isCreating: false
     }),
     watch: {
         filter() {
@@ -176,6 +183,8 @@ export default {
             } else if (e.keyCode === 13) {
                 if (me.items.length === 1) {
                     me.select(me.items[0], false)
+                } else if (me.items.length === 0) {
+                    me.create()
                 }
             }
         },
@@ -195,6 +204,23 @@ export default {
                 // make sure the selected item is visible
                 _list.scrollTop = offsetTop + (height * 3) - _list.offsetHeight
             }
+        },
+        create () {
+            let me = this
+            
+            me.$emit('create', me.filter, {
+                spin() {
+                    me.isCreating = true
+                },
+                done (item) {
+                    me.isCreating = false
+                    
+                    me.$nextTick(() => {
+                        me.filter = ''
+                        me.select(item, false)
+                    })
+                }
+            })
         }
     }
 }

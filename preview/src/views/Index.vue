@@ -1,6 +1,5 @@
 <template>
     <div class="index row">
-        
         <div class="menu">
             <ul>
                 <li v-for="item in menu" @click="use(item)"
