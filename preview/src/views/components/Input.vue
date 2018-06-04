@@ -32,10 +32,8 @@
             <div class="example-code">
                 <v-code language="html">
 !<!--
-<div class="row">
-    <v-input type="text" placeholder="A simple input with validation" v-model="input.value"
-             @validate="validateInput"></v-input>
-</div>
+<v-input type="text" placeholder="A simple input with validation" v-model="input.value"
+         @validate="validateInput"></v-input>
 -->
                 </v-code>
             </div>
@@ -66,7 +64,21 @@ validateInput({ ok, fail, clear, spin }) {
                          @validate="validateInput"></v-input>
             </div>
         </div>
-        </v-component>
+        <div class="component-example">
+            <div class="example-code">
+                <v-code language="html">
+!<!--
+<v-input type="textarea" placeholder="A simple textarea" v-model="input.value"
+         @validate="validateInput"></v-input>
+-->
+                </v-code>
+            </div>
+            <div class="example-content">
+                <v-input type="textarea" placeholder="A simple textarea" v-model="input.value"
+                         @validate="validateInput"></v-input>
+            </div>
+        </div>
+    </v-component>
 </template>
 
 <script>
