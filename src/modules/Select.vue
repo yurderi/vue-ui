@@ -222,6 +222,7 @@ export default {
                     me.$nextTick(() => {
                         me.filter = ''
                         me.select(item, false)
+                        me.focus()
                     })
                 }
             })

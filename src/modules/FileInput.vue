@@ -38,7 +38,7 @@ export default {
         onPathSelected(e) {
             let me = this
             let path = e.target.files.length === 1
-                ? e.target.files[0].path
+                ? (e.target.files[0].path || e.target.files[0].name)
                 : ''
     
             me.$emit('input', path)
