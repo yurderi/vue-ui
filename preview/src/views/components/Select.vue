@@ -98,7 +98,7 @@ export default {
             { id: 6, language: 'Polska', translations: true },
             { id: 7, language: 'Sweden', translations: true },
             { id: 8, language: 'Switzerland', translations: true },
-            { id: 9, language: 'Luxemburg', translations: true },
+            { id: 9, language: 'Luxemburg', translations: true, _disabled: true },
             { id: 10, language: 'Holland', translations: true },
             { id: 11, language: 'India', translations: true },
         ]

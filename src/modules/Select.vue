@@ -22,7 +22,7 @@
             
             <ul class="values" v-if="items.length > 0" ref="list">
                 <li v-for="item in items"
-                    :class="{ active: item[valueField] === value }"
+                    :class="{ active: item[valueField] === value, disabled: item._disabled === true }"
                     @click="select(item)" ref="items">
                     <slot name="item" :item="item" :displayField="displayField">
                         {{ item[displayField] }}
@@ -32,7 +32,7 @@
             <span v-else class="nothing-found">
                 Nothing found for <span class="filter-term">"{{ filter }}"</span>
                 <span class="create-item">
-                    (Press "enter" to create a new item)
+                    (Press "ctrl + enter" to create a new item)
                 </span>
             </span>
         </div>
@@ -117,6 +117,10 @@ export default {
         select (item, unfocus) {
             let me = this
             
+            if (item._disabled === true) {
+                return
+            }
+            
             if (typeof unfocus === 'undefined') {
                 unfocus = true
             }
@@ -165,14 +169,14 @@ export default {
             }
             
             if (e.keyCode === 38) { // up
-                let prevIndex = me.selectedIndex - 1
-                if (prevIndex >= 0) {
-                    me.select(me.items[prevIndex], false)
+                let prev = me.findNext('backwards')
+                if (prev) {
+                    me.select(prev, false)
                 }
             } else if (e.keyCode === 40) { // down
-                let nextIndex = me.selectedIndex + 1
-                if (nextIndex < me.items.length) {
-                    me.select(me.items[nextIndex], false)
+                let next = me.findNext('forward')
+                if (next) {
+                    me.select(next, false)
                 }
             } else if (e.keyCode === 27) { // esc
                 if (me.filter.length > 0) { // first ESC clears the search box
@@ -181,10 +185,10 @@ export default {
                     me.isFocus = false
                 }
             } else if (e.keyCode === 13) {
-                if (me.items.length === 1) {
-                    me.select(me.items[0], false)
-                } else if (me.items.length === 0) {
+                if (e.ctrlKey === true) {
                     me.create()
+                } else if (me.items.length === 1) {
+                    me.select(me.items[0], false)
                 }
             }
         },
@@ -226,6 +230,24 @@ export default {
                     })
                 }
             })
+        },
+        findNext(direction) {
+            let me = this
+            let index = me.selectedIndex
+            
+            while (true) {
+                index += (direction === 'forward' ? 1 : -1)
+                
+                if (index >= 0 && index < me.items.length) {
+                    if (me.items[index]._disabled === true) {
+                        continue
+                    } else {
+                        return me.items[index]
+                    }
+                } else {
+                    break
+                }
+            }
         }
     }
 }
