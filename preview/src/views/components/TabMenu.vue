@@ -21,7 +21,7 @@
                 <v-tab id="first" label="First" icon="bars">
                     Hello World
                 </v-tab>
-                <v-tab id="second" label="Second">
+                <v-tab id="second" label="Second" :active="true">
                     Hello Sun
                 </v-tab>
             </v-tab-menu>

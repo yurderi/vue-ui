@@ -1,7 +1,7 @@
 <template>
     <div class="tab-menu">
         <ul>
-            <li v-for="tab in tabs" :class="{ active: tab.active }"
+            <li v-for="tab in tabs" :class="{ active: tab.isActive }"
                 @click="select(tab)">
                 <fa v-if="tab.icon" :icon="tab.icon"></fa>
                 <span>{{ tab.label }}</span>
@@ -25,7 +25,18 @@ export default {
         me.tabs = me.$children
     
         if (me.tabs.length > 0) {
-            me.tabs[0].active = true
+            let hasActive = false
+            
+            me.tabs.forEach(tab => {
+                if (tab.active === true) {
+                    hasActive = true
+                    tab.isActive = true
+                }
+            })
+            
+            if (hasActive === false) {
+                me.tabs[0].isActive = true
+            }
         }
     },
     methods: {
@@ -36,8 +47,8 @@ export default {
                 tab = me.tabs.find(t => t.id === tab)
                 me.select(tab)
             } else if (typeof tab === 'object') {
-                me.tabs.forEach(tab => tab.active = false)
-                tab.active = true
+                me.tabs.forEach(tab => tab.isActive = false)
+                tab.isActive = true
             }
         }
     }

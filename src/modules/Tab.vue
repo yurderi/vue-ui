@@ -1,5 +1,5 @@
 <template>
-    <div class="tab-item" :class="{ active }">
+    <div class="tab-item" :class="{ active: isActive }">
         <slot></slot>
     </div>
 </template>
@@ -22,10 +22,16 @@ export default {
             type: String,
             required: false,
             description: 'An optional icon for the tab menu list.'
+        },
+        active: {
+            type: Boolean,
+            required: false,
+            description: 'Whether this tab should be activated on initialization.',
+            default: false
         }
     },
     data: () => ({
-        active: false
+        isActive: false
     })
 }
 </script>
