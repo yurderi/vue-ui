@@ -6,20 +6,8 @@
         <div class="component-description">
             font-awesome icon
         </div>
-        <div class="tab-menu" v-if="tab">
-            <ul>
-                <li :class="{ active: tab === 'properties' }" @click="tab = 'properties'">
-                    <fa icon="list"></fa>
-                    <span>Properties</span>
-                </li>
-                <li :class="{ active: tab === 'examples' }" @click="tab = 'examples'">
-                    <fa icon="file-code"></fa>
-                    <span>Examples</span>
-                </li>
-            </ul>
-        </div>
-        <div class="tab-content">
-            <div class="tab-item" :class="{ active: tab === 'properties' }">
+        <v-tab-menu>
+            <v-tab id="properties" label="Properties" icon="list">
                 <div class="component-properties">
                     <table>
                         <thead>
@@ -98,8 +86,8 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="tab-item" :class="{ active: tab === 'examples' }">
+            </v-tab>
+            <v-tab id="examples" label="Examples" icon="file-code">
                 <div class="component-examples">
                     <div class="component-example">
                         <div class="example-content">
@@ -107,8 +95,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </v-tab>
+        </v-tab-menu>
     </div>
 </template>
 
