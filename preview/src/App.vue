@@ -2,7 +2,7 @@
     <div id="app" class="column center-y">
         <img src="./assets/logo.png">
         <div class="title">
-            An user interface library for Vue Components.
+            A simple & functional ui library for vue components.
         </div>
         <router-view />
     </div>

@@ -1,0 +1,408 @@
+/*!
+ * Rhinos UI v1.0.3
+ * (c) 2018 Rhinos Media&reg; UG
+ * Released under the MIT License.
+ */
+/* Very tiny grid system using flex box */
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+}
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.center-x {
+  display: flex;
+  justify-items: center;
+}
+.center-y {
+  display: flex;
+  align-items: center;
+}
+.flex {
+  flex: 1;
+}
+.hidden {
+  display: none;
+}
+.relative {
+  position: relative;
+}
+.absolute {
+  position: absolute;
+}
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.full-size {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.right {
+  display: flex;
+  justify-content: flex-end;
+}
+.left {
+  display: flex;
+  justify-content: flex-start;
+}
+input[type=text],
+input[type=password],
+input[type=email] {
+  border: 1px solid #ccc;
+  padding: 5px;
+  color: #333;
+  margin: 0;
+  outline: 0 none;
+  border-radius: 3px;
+  box-shadow: inset -1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus {
+  border-color: rgba(52, 152, 219, 0.75);
+}
+input[type=text]:disabled,
+input[type=password]:disabled,
+input[type=email]:disabled {
+  background: rgba(0, 0, 0, 0.025);
+}
+button {
+  color: #fff;
+  background: #e74c3c;
+  padding: 5px 15px;
+  outline: 0 none;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(0, 0, 0, 0.3);
+  transition: all 0.085s;
+}
+button:hover {
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.2), inset 0 -1px rgba(0, 0, 0, 0.3), 0 0 7px rgba(52, 152, 219, 0.5);
+}
+button:active {
+  background: #333;
+  cursor: pointer;
+}
+button[disabled] {
+  box-shadow: none !important;
+  background: #ccc;
+  cursor: not-allowed;
+}
+.fieldset-container {
+  display: flex;
+  flex-direction: row;
+}
+.fieldset-container fieldset {
+  flex: 1;
+  margin: 5px 10px;
+}
+fieldset {
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius: 3px;
+  margin: 0 0 10px 0;
+  padding: 5px 5px 5px 10px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+fieldset:last-child {
+  margin: 0;
+}
+fieldset legend {
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 3px 7px;
+  border-radius: 3px;
+  background: #fff;
+}
+fieldset .form-field {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 5px 0;
+  position: relative;
+}
+fieldset .form-field.form-field-path input[type=file] {
+  display: none;
+}
+fieldset .form-field.form-field-path button {
+  margin-left: 5px;
+}
+fieldset .form-field.form-field-path .error-container {
+  right: 54px;
+}
+fieldset .form-field.form-field-path.has-info .error-container {
+  right: 84px;
+}
+fieldset .form-field:last-child {
+  margin: 0;
+}
+fieldset .form-field label {
+  width: 100px;
+  font-size: 14px;
+  line-height: 30px;
+}
+fieldset .form-field label.w-100 {
+  width: 100px;
+}
+fieldset .form-field label.w-150 {
+  width: 150px;
+}
+fieldset .form-field label.w-200 {
+  width: 200px;
+}
+fieldset .form-field label.w-250 {
+  width: 250px;
+}
+fieldset .form-field input {
+  flex: 1;
+}
+fieldset .form-field input.error:not([disabled]) {
+  border-color: #e74c3c;
+}
+fieldset .form-field .error-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8px;
+  right: 5px;
+  width: 16px;
+  height: 16px;
+  border-radius: 10px;
+}
+fieldset .form-field .error-container i {
+  color: #e74c3c;
+}
+fieldset .form-field.has-info .error-container {
+  right: 35px;
+}
+.buttons {
+  margin: 10px 0 0 0;
+}
+.table {
+  flex: 1;
+  overflow-y: auto;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-size: 14px;
+}
+table thead tr th {
+  border-bottom: 1px solid #ccc;
+  padding: 5px 10px;
+  text-align: left;
+}
+table tbody tr td {
+  padding: 3px 10px;
+}
+.checkbox {
+  display: flex;
+  justify-content: flex-start;
+}
+.checkbox label {
+  font: 500 12px Open Sans, serif;
+  display: block;
+}
+.checkbox .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 30px;
+  padding: 0 15px;
+  border-radius: 3px;
+  box-shadow: inset -1px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.125s;
+  font-size: 12px;
+  background: #e74c3c;
+  color: #fff;
+}
+.checkbox .container span {
+  font-family: 'Consolas', monospace;
+}
+.checkbox .container.active {
+  background: #2ecc71;
+}
+.info {
+  display: flex;
+  align-items: center;
+  height: 31px;
+  padding: 0 5px;
+  position: relative;
+}
+.info .info-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #2980b9;
+  color: #fff;
+  border-radius: 100%;
+  cursor: pointer;
+}
+.info .info-button:hover + .info-text {
+  display: block;
+}
+.info .info-text {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 12px;
+  display: none;
+  z-index: 5;
+}
+.info .info-text:hover {
+  display: block;
+}
+.modal-mask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity .3s ease;
+}
+.modal-container {
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all .3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+.modal-body {
+  padding: 10px 20px;
+}
+.modal-header {
+  font-size: 16px;
+}
+.modal-content {
+  margin: 10px 0 0 0;
+}
+.modal-footer {
+  margin: 10px 0 0 0;
+}
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+.modal-enter {
+  opacity: 0;
+}
+.modal-leave-active {
+  opacity: 0;
+}
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  background: #ccc;
+  border-radius: 3px;
+  position: relative;
+}
+.progress-bar-container .progress-bar {
+  height: 20px;
+  background: #3498db;
+  border-radius: 3px;
+  transition: width 0.125s;
+}
+.progress-bar-container .progress-bar-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
+}
+* {
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #eee;
+}
+nav {
+  width: 150px;
+  border-right: 1px solid #ccc;
+  background: #fff;
+}
+nav ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+}
+nav ul li {
+  font-size: 14px;
+}
+nav ul li.active {
+  background: rgba(0, 0, 0, 0.05);
+}
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 0.25rem .5rem;
+  outline: 0 none;
+}
+nav ul li a span.badge {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 0 7px;
+  border-radius: 50px;
+}
+main {
+  padding: 10px;
+}
