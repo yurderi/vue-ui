@@ -404,6 +404,8 @@ const loadModules = Vue => {
     __webpack_require__(41);
     __webpack_require__(42);
     __webpack_require__(43);
+
+    __webpack_require__(44);
 };
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -8755,6 +8757,12 @@ bunker(function () {
 /* harmony default export */ __webpack_exports__["default"] = (icons$1);
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
