@@ -1,0 +1,49 @@
+.list-container {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  &.active {
+    border-color: rgba(52, 152, 219, 0.75);
+  }
+  .list-input {
+    input {
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+    }
+  }
+  .list-items {
+    padding: 5px;
+    border-top: none;
+    height: 150px;
+    overflow-y: auto;
+    .no-items {
+      color: #999;
+      font-style: italic;
+    }
+    .list-item {
+      padding: 3px 5px;
+      &:hover {
+        background: rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+        .item-remove {
+          display: block;
+        }
+      }
+      .item-index {
+        color: #999;
+        display: block;
+        margin: 0  5px 0 0;
+      }
+      .item-value {
+        display: block;
+      }
+      .item-remove {
+        display: none;
+        color: #999;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}

@@ -3,12 +3,16 @@
         <template v-if="['textarea'].indexOf(type) > -1">
             <textarea :value="value" :required="required" :placeholder="placeholder"
                       :readonly="readonly" :disabled="disabled" :id="id" :name="name"
-                      ref="input" @input="change" @change="change"></textarea>
+                      ref="input" @input="change" @change="change"
+                      @focus="$emit('focus', $event)" @blur="$emit('blur', $event)"
+                      @keydown="$emit('keydown', $event)"></textarea>
         </template>
         <template v-else>
             <input :type="type" :value="value" :required="required" :placeholder="placeholder"
                    :readonly="readonly" :disabled="disabled" :id="id" :name="name"
-                   ref="input" @input="change" @change="change">
+                   ref="input" @input="change" @change="change"
+                   @focus="$emit('focus', $event)" @blur="$emit('blur', $event)"
+                   @keydown="$emit('keydown', $event)">
         </template>
         
         <v-validation :validation="validation"></v-validation>

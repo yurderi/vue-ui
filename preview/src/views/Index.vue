@@ -26,6 +26,7 @@ import ProgressBarComponent from '@/views/components/ProgressBar'
 import SelectComponent from '@/views/components/Select'
 import TabMenuComponent from '@/views/components/TabMenu'
 import TabComponent from '@/views/components/Tab'
+import ListComponent from '@/views/components/List'
 
 export default {
     name: 'index',
@@ -42,6 +43,7 @@ export default {
             { name: 'v-select', component: 'select-component' },
             { name: 'v-tab-menu', component: 'tab-menu-component' },
             { name: 'v-tab', component: 'tab-component' },
+            { name: 'v-list', component: 'list-component' }
         ],
         selectedComponent: 'fa-component'
     }),
@@ -56,7 +58,8 @@ export default {
         ProgressBarComponent,
         SelectComponent,
         TabMenuComponent,
-        TabComponent
+        TabComponent,
+        ListComponent
     },
     mounted() {
         let me = this
