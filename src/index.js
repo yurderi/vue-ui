@@ -20,6 +20,8 @@ const loadModules = (Vue) => {
     require('@fortawesome/fontawesome-free-brands')
     require('@fortawesome/fontawesome-free-solid')
     require('@fortawesome/fontawesome-free-regular')
+    
+    require('./assets/less/all.less')
 }
 
 export default {
