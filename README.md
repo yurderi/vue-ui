@@ -4,16 +4,16 @@ Yet another simple ui toolkit built to work with vue.
 
 ## Installation
 ```
-npm i --save rhinos-vue
+npm i --save @yurderi/vue-ui
 ```
 
 ```javascript
-const Vue     = require('vue')
-const RhinosUI = require('rhinos-vue')
+const Vue   = require('vue')
+const VueUI = require('@yurderi/vue-ui')
 
-require('rhinos-vue/assets/less/all.less')
+require('@yurderi/vue-ui/assets/less/all.less')
 
-Vue.use(RhinosUI)
+Vue.use(VueUI)
 
 // ... further code
 ```
