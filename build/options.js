@@ -4,12 +4,12 @@ const path = require('path');
 
 // Hardcoding here (and not reading from package.json) as the files are built
 // before the version is updated in package.json
-const version = '1.0.3';
+const version = '1.1.8';
 
 const banner =
   '/*!\n' +
-  ' * Rhinos UI v' + version + '\n' +
-  ' * (c) ' + new Date().getFullYear() + ' Rhinos Media&reg; UG\n' +
+  ' * Vue UI v' + version + '\n' +
+  ' * (c) ' + new Date().getFullYear() + ' yurderi\n' +
   ' * Released under the MIT License.\n' +
   ' */';
 

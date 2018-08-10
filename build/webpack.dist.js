@@ -10,9 +10,11 @@ const base = require('./webpack.base.js');
 const config = merge(base, {
     entry: options.paths.resolve('src/index.js'),
     output: {
-        filename: options.isProduction ? 'rhinos-ui.min.js' : 'rhinos-ui.js',
+        filename: options.isProduction
+            ? 'vue-ui.min.js'
+            : 'vue-ui.js',
         path: options.paths.output.main,
-        library: 'RhinosUI',
+        library: 'VueUI',
         libraryTarget: 'umd'
     },
     plugins: [
@@ -22,7 +24,9 @@ const config = merge(base, {
             entryOnly: true
         }),
         new ExtractTextPlugin({
-            filename: options.isProduction ? 'rhinos-ui.min.css' : 'rhinos-ui.css'
+            filename: options.isProduction
+                ? 'vue-ui.min.css'
+                : 'vue-ui.css'
         })
     ]
 });
