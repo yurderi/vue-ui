@@ -20,3 +20,9 @@ Vue.use(VueUI)
 
 // ... further code
 ```
+
+
+## Contributing
+To contribute you need to pull the project. The components are stored in the src/-Directory. While developing components it is recommended to run the preview with hot-reloading in the preview/-Directory.
+
+If you are done run `npm run build` in the root directory.
