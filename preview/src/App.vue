@@ -1,6 +1,5 @@
 <template>
     <div id="app" class="column center-y">
-        <img src="./assets/logo.png">
         <div class="title">
             A simple & functional ui library for vue components.
         </div>
