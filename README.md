@@ -2,6 +2,9 @@
 
 Yet another simple ui toolkit built to work with vue.
 
+## Demo
+https://vue-ui.yurderi.de/
+
 ## Installation
 ```
 npm i --save @yurderi/vue-ui
