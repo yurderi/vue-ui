@@ -2,7 +2,7 @@
     <div class="file-input row flex">
         <input :value="value" type="text" class="flex" :id="id" @input="input" :disabled="disabled">
         
-        <button @click="$refs.fileInput.click()" :disabled="disabled">...</button>
+        <button @click.prevent="openFileSelect" :disabled="disabled" type="button">...</button>
         
         <input type="file" :webkitdirectory="type === 'directory'" ref="fileInput" @change="onPathSelected"/>
     </div>
@@ -40,13 +40,18 @@ export default {
             let path = e.target.files.length === 1
                 ? (e.target.files[0].path || e.target.files[0].name)
                 : ''
-    
+            
             me.$emit('input', path)
         },
         input(e) {
             let me = this
             
             me.$emit('input', e.target.value)
+        },
+        openFileSelect () {
+            let me = this
+            
+            me.$refs.fileInput.click()
         }
     }
 }

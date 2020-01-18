@@ -33,7 +33,6 @@ export default {
             required: false
         },
         value: {
-            type: String,
             description: 'The associated value',
             required: false
         },
