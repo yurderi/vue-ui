@@ -1,6 +1,6 @@
 {
   "name": "@yurderi/vue-ui",
-  "version": "1.1.8",
+  "version": "1.1.9",
   "description": "Yet another simple ui toolkit built for vue",
   "main": "dist/rhinos-ui.js",
   "scripts": {
