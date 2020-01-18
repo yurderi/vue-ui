@@ -40,7 +40,7 @@ export default {
             let path = e.target.files.length === 1
                 ? (e.target.files[0].path || e.target.files[0].name)
                 : ''
-            
+    
             me.$emit('input', path)
         },
         input(e) {

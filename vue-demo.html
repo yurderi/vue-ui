@@ -1,0 +1,57 @@
+<div class="app">
+    <div class="container">
+        <input type="text" placeholder="ToDo"
+               name="todo" v-model="todo">
+        <button @click="add">
+            Hinzuf&uuml;gen
+        </button>
+    </div>
+    <div class="container">
+        <div class="header">
+            Meine ToDo's
+        </div>
+        <ul class="todo-content">
+            <li v-for="item in todos">
+                {{ item }}
+            </li>
+        </ul>
+        <div class="empty-todo-list" v-if="!todos.length">
+            Keine ToDos vorhanden
+        </div>
+    </div>
+    <div class="container code">
+        <pre><code>{{ todo }}&nbsp;</code></pre>
+        <pre><code>{{ todos }}</code></pre>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+<script type="text/javascript">
+new Vue({
+    el: '.app',
+    data: {
+        todo: '',
+        todos: []
+    },
+    methods: {
+        add () {
+            this.todos.push(this.todo)
+            this.todo = ''
+        }
+    }
+})
+</script>
+
+<style type="text/css">
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+.container.code {
+    border-radius:3px;
+    background: #ddd;
+    color: #333;
+    padding: 10px;
+    width: 200px;
+}
+</style>

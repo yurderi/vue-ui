@@ -23,7 +23,7 @@ export default {
             required: false
         }
     },
-    events: {
+    availableEvents: {
         click: {
             description: 'Fires when the button is clicked.'
         }

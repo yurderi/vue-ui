@@ -1,6 +1,6 @@
 {
   "name": "@yurderi/vue-ui",
-  "version": "1.1.9",
+  "version": "1.2.1",
   "description": "Yet another simple ui toolkit built for vue",
   "main": "dist/rhinos-ui.js",
   "scripts": {
@@ -9,9 +9,10 @@
   "keywords": [
     "vue",
     "ui",
-    "toolkit"
+    "toolkit",
+    "rhinos"
   ],
-  "author": "tyurderi@yahoo.de",
+  "author": "meier@rhinos-media.de",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.4",
@@ -39,7 +40,7 @@
     "vue-router": "^2.7.0",
     "vue-template-compiler": "^2.5.16",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^3.1.11"
+    "webpack-dev-server": "^2.2.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.7",

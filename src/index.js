@@ -27,17 +27,3 @@ export default {
         loadModules(Vue)
     }
 }
-
-new Vue({
-    el: '.app',
-    data: {
-        todo: '',
-        todos: []
-    },
-    methods: {
-        add () {
-            this.todos.push(this.todo)
-            this.todo = ''
-        }
-    }
-})

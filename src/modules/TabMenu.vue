@@ -1,6 +1,6 @@
 <template>
     <div class="tab-menu">
-        <ul>
+        <ul v-if="tabs.length > 1">
             <li v-for="tab in tabs" :class="{ active: tab.isActive }"
                 @click="select(tab)">
                 <fa v-if="tab.icon" :icon="tab.icon"></fa>

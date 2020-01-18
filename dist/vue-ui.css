@@ -433,6 +433,7 @@ table tbody tr td {
 }
 .select {
   position: relative;
+  z-index: 150;
 }
 .select.focus div.selected-value {
   border-color: rgba(52, 152, 219, 0.75);

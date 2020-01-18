@@ -1,0 +1,52 @@
+<style type="text/css">
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+.container.code {
+    border-radius:3px;
+    background: #ddd;
+    color: #333;
+    padding: 10px;
+    width: 200px;
+}
+</style>
+
+<div class="app">
+    <div class="container">
+        <input type="text" placeholder="ToDo"
+               name="todo">
+        <button>
+            Hinzuf&uuml;gen
+        </button>
+    </div>
+    <div class="container">
+        <div class="header">
+            Meine ToDo's
+        </div>
+        <ul class="todo-content"></ul>
+        <div class="empty-todo-list">
+            Keine ToDos vorhanden
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('.empty-todo-list').show()
+
+        $('button').on('click', function() {
+            var $input = $('input[name="todo"]')
+            var text = $input.val()
+            var $el = $('<li />', {
+                html: text
+            })
+
+            $('.empty-todo-list').hide()
+            $el.appendTo('.todo-content')
+
+            $input.val('')
+        })
+    })
+</script>
