@@ -9,10 +9,9 @@
   "keywords": [
     "vue",
     "ui",
-    "toolkit",
-    "rhinos"
+    "toolkit"
   ],
-  "author": "meier@rhinos-media.de",
+  "author": "tyurderi@yahoo.de",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.4",
