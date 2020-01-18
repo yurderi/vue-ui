@@ -1,18 +1,17 @@
 {
   "name": "@yurderi/vue-ui",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Yet another simple ui toolkit built for vue",
-  "main": "dist/rhinos-ui.js",
+  "main": "dist/vue-ui.js",
   "scripts": {
     "build": "webpack --config build/webpack.dist.js"
   },
   "keywords": [
     "vue",
     "ui",
-    "toolkit",
-    "rhinos"
+    "toolkit"
   ],
-  "author": "meier@rhinos-media.de",
+  "author": "tyurderi@yahoo.de",
   "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^6.5.4",
